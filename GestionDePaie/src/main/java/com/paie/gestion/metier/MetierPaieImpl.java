@@ -125,4 +125,11 @@ public class MetierPaieImpl implements IMetierPaie {
 		return dao.AfficherListRoles();
 	}
 
+	@Override
+	public void ModifierBanque(Banque Banque) {
+		// TODO Auto-generated method stub
+		dao.ModifierBanque(Banque);
+		
+	}
+
 }

@@ -127,6 +127,11 @@ public class DaoPaieImpl implements IDaoPaie {
 		return req.getResultList();
 	}
 
+	@Override
+	public void ModifierBanque(Banque Banque) {
+		em.merge(Banque);
+	}
+
 	
 
 }

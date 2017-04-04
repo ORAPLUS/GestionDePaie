@@ -9,6 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name="t_banques")
@@ -19,12 +22,18 @@ public class Banque implements Serializable {
 	@Column(name="id")
 	private Long id;
 	@Column(name="nom")
+	@NotEmpty(message="Le champ Nom est obligatoire.")
 	private String nom;
 	@Column(name="tel")
+	@NotEmpty(message="Le champ Téléphone est obligatoire.")
+	@Size(min=0,max=10,message="Numéro de Téléphone requis entre 0 et 10.")
 	private String tel;
 	@Column(name="adresse")
+	@NotEmpty(message="Le champ Adresse est obligatoire.")
 	private String adresse;
 	@Column(name="fax")
+	@NotEmpty(message="Le champ Fax est obligatoire.")
+	@Size(min=0,max=10,message="Numéro de Fax requis entre 0 et 10.")
 	private String fax;
 	@OneToMany(mappedBy="banque")
 	private Collection<Employe> employees;

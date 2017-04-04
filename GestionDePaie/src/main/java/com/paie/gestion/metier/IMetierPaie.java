@@ -13,6 +13,7 @@ public interface IMetierPaie{
 		public Banque AjouterBanque(Banque banque);
 		public Banque ConsulterBanque(Long idBanque);
 		public void SupprimerBanque(Long idBanque);
+		public void ModifierBanque(Banque Banque);
 		public List<Banque> AfficherListBanques();
 		
 		//Profession :
