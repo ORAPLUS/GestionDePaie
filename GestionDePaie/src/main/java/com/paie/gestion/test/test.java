@@ -11,6 +11,7 @@ public class test {
 
 	public static void main(String[] args) {
 		
+		@SuppressWarnings("resource")
 		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(new String[]{"applicationContext.xml"});
 		IMetierPaie metier = (IMetierPaie) ctx.getBean("metier");
 		
